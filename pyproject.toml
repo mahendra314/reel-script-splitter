@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reel-script-splitter"
+version = "0.1.0"
+description = "Split a short-form video script (.txt) into timed clips of 15 seconds or less."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+reel-splitter = "reel_splitter.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["reel_splitter*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
